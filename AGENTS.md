@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project architecture
+
+- Keep the homepage as a single responsive composition in `src/routes/index.tsx`; this preserves exact cross-device alignment with the supplied reference.
