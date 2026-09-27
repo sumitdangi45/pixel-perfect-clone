@@ -61,7 +61,7 @@ function ProjectButton({ className = "" }: { className?: string }) {
 
 function Index() {
   return (
-    <main id="home" className="min-h-screen overflow-hidden bg-background text-foreground">
+    <main id="home" className="home-page min-h-screen overflow-hidden bg-background text-foreground">
       <div className="hidden h-10 items-center justify-between bg-ink px-[4.5%] text-xs text-paper lg:flex">
         <p>🚀&nbsp; Helping businesses grow with modern websites, web apps and custom software.</p>
         <p>◉&nbsp; Based in India &nbsp; | &nbsp; Working with clients worldwide</p>
@@ -117,7 +117,6 @@ function Index() {
 
         <div className="hero-visual" id="story">
           <img src={officeAsset.url} alt="Modern Anni office workspace with plants and a laptop" />
-          <div className="service-list" aria-label="Services"><span>Strategy</span><span>Design</span><span>Development</span><span>Support</span><span>Growth</span></div>
         </div>
       </section>
 
