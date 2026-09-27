@@ -101,10 +101,10 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
   .home-page > header { height: auto; }
   .hero-grid { min-height: 0; height: 100%; }
   .hero-copy { min-height: 0; padding-top: clamp(24px, 5.7vh, 62px); padding-bottom: clamp(18px, 3.7vh, 40px); }
-  .hero-copy h1 { margin-top: clamp(14px, 2.8vh, 31px); font-size: clamp(2.7rem, min(4vw, 7vh), 4.25rem); }
-  .hero-description { margin-top: clamp(14px, 2.3vh, 25px); }
-  .hero-copy > div.mt-8 { margin-top: clamp(18px, 3vh, 32px); }
-  .stats-grid { margin-top: clamp(24px, 5.6vh, 66px); }
+  .hero-copy h1 { margin-top: clamp(12px, 2.2vh, 25px); font-size: clamp(2.55rem, min(3.55vw, 6.25vh), 4rem); }
+  .hero-description { margin-top: clamp(12px, 1.8vh, 20px); font-size: clamp(.88rem, 1.25vw, 1.08rem); line-height: 1.5; }
+  .hero-copy > div.mt-8 { margin-top: clamp(14px, 2.2vh, 24px); }
+  .stats-grid { margin-top: clamp(18px, 3.5vh, 38px); }
   .trust-band { min-height: 0; padding-top: clamp(13px, 2.3vh, 25px); padding-bottom: clamp(18px, 3.8vh, 42px); }
   .brand-row { margin-top: clamp(12px, 2.5vh, 27px); }
   .what-we-do { min-height: 0; padding-top: clamp(20px, 4.8vh, 53px); padding-bottom: clamp(20px, 4.8vh, 53px); }
