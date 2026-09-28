@@ -14,7 +14,7 @@ import saasAsset from "@/assets/anni-saas-service.jpg.asset.json";
 import aiAsset from "@/assets/anni-ai-service.jpg.asset.json";
 import growthAsset from "@/assets/anni-growth-service.jpg.asset.json";
 import topNote from "@/assets/anni-note-top.png.asset.json";
-import bottomNote from "@/assets/anni-note-bottom.png.asset.json";
+import bottomNote from "@/assets/anni-note-bottom-clean.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
