@@ -120,6 +120,62 @@ function Offerings() {
   );
 }
 
+const reasons = [
+  { icon: Users, title: "Client First Approach", text: "Your goals are our priority. We focus on solutions that create real value." },
+  { icon: Lightbulb, title: "Creative & Modern Design", text: "We design clean, modern and user-friendly interfaces that make an impact." },
+  { icon: Code2, title: "Quality Development", text: "Clean code, scalable solutions and the latest technologies for long-term success." },
+  { icon: ChartColumnIncreasing, title: "Ongoing Support", text: "We’re with you even after launch, with continuous support and improvements." },
+];
+const whyStats = [["50+", "Projects Delivered"], ["30+", "Happy Clients"], ["5+", "Industries Served"], ["100%", "Client Satisfaction"]];
+const values = [
+  { icon: ShieldCheck, title: "Trust", text: "We keep our promises." },
+  { icon: UsersRound, title: "Collaboration", text: "We work as your extended team." },
+  { icon: Target, title: "Results", text: "We focus on measurable growth." },
+  { icon: Heart, title: "People", text: "We value lasting relationships." },
+];
+
+function WhyUs() {
+  return (
+    <section id="why-us" className="why-page" aria-labelledby="why-title">
+      <div className="why-inner">
+        <div className="why-hero">
+          <div className="why-copy">
+            <p className="offerings-eyebrow">WHY CHOOSE US <span /></p>
+            <h2 id="why-title">More Than Just Development, <span>A True Partner.</span></h2>
+            <p>We don’t just build websites or apps, we work closely with you to understand your goals, solve real problems, and help your business grow with the right technology.</p>
+            <div className="why-actions">
+              <Button asChild className="why-primary shadow-none"><a href="#contact">Let’s Work Together <ArrowRight size={16} /></a></Button>
+              <a href="#story" className="why-story"><span><Play size={14} fill="currentColor" /></span><strong>Our Story<small>2 min watch</small></strong></a>
+            </div>
+          </div>
+          <img className="why-photo" src={whyAsset.url} alt="Anni team working together" />
+        </div>
+        <div className="why-cards">
+          {reasons.map(({ icon: Icon, title, text }) => (
+            <article key={title}><span className="why-icon"><Icon size={22} /></span><div><h3>{title}</h3><p>{text}</p></div></article>
+          ))}
+        </div>
+        <div className="why-stats">
+          {whyStats.map(([n, l]) => <div key={l}><strong>{n}</strong><span>{l}</span></div>)}
+          <blockquote><b>“</b><p>“Great team to work with. They understood our needs and delivered beyond expectations.”<cite>— A Happy Client</cite></p></blockquote>
+        </div>
+        <div className="why-values">
+          <div className="why-values-head">
+            <div><p className="offerings-eyebrow">OUR VALUES <span /></p><h2>What Drives Us</h2></div>
+            <p>We believe in building long-term relationships through transparency, quality, and a genuine passion for technology.</p>
+          </div>
+          <div className="why-values-list">
+            {values.map(({ icon: Icon, title, text }) => (
+              <div key={title}><Icon size={38} strokeWidth={1.5} /><div><h3>{title}</h3><p>{text}</p></div></div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 function Index() {
   return (
     <main id="home" className="home-page min-h-screen overflow-hidden bg-background text-foreground">
