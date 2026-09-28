@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Menu, Play } from "lucide-react";
+import { ArrowRight, BrainCircuit, ChartNoAxesCombined, Code2, Database, Menu, MessageCircle, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -9,6 +9,12 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import officeAsset from "@/assets/anni-office-hero.jpg.asset.json";
+import customAsset from "@/assets/anni-custom-service.jpg.asset.json";
+import saasAsset from "@/assets/anni-saas-service.jpg.asset.json";
+import aiAsset from "@/assets/anni-ai-service.jpg.asset.json";
+import growthAsset from "@/assets/anni-growth-service.jpg.asset.json";
+import topNote from "@/assets/anni-note-top.png.asset.json";
+import bottomNote from "@/assets/anni-note-bottom-clean.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,7 +36,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const navigation = ["Home", "About", "Services", "Projects", "Why Us", "Contact"];
+const navigation = ["Home", "About", "Services", "Projects", "Why Us", "Blog", "Contact"];
 const stats = [
   ["50+", "Projects Delivered"],
   ["30+", "Happy Clients"],
@@ -38,6 +44,12 @@ const stats = [
   ["100%", "Client Satisfaction"],
 ];
 const brands = ["TATA", "Reliance", "Infosys", "Flipkart", "OYO", "PhonePe", "Swiggy", "Microsoft"];
+const offerings = [
+  { number: "01", tag: "TAILOR-MADE", title: "Custom Development", description: "Websites, web applications and custom software crafted exactly to your business goals.", action: "Explore Custom Solutions", image: customAsset.url, icon: Code2 },
+  { number: "02", tag: "READY TO LAUNCH", title: "SaaS Solutions", description: "Scalable SaaS platforms and ready-made solutions to help businesses launch faster.", action: "Explore SaaS Solutions", image: saasAsset.url, icon: Database },
+  { number: "03", tag: "INTELLIGENT SYSTEMS", title: "AI & Automation", description: "AI agents, workflow automation and intelligent systems that reduce repetitive work and improve productivity.", action: "Explore AI Solutions", image: aiAsset.url, icon: BrainCircuit },
+  { number: "04", tag: "GROWTH & REACH", title: "Digital Growth", description: "SEO, social media, performance marketing and digital strategies to help businesses get discovered and grow online.", action: "Grow Your Business", image: growthAsset.url, icon: ChartNoAxesCombined },
+];
 
 function Logo() {
   return (
@@ -56,6 +68,55 @@ function ProjectButton({ className = "" }: { className?: string }) {
     <Button asChild className={`h-14 rounded-xl px-8 text-[0.92rem] font-medium shadow-none ${className}`}>
       <a href="#contact">Start Your Project <ArrowRight /></a>
     </Button>
+  );
+}
+
+function Offerings() {
+  return (
+    <section id="offerings" className="offerings-page" aria-labelledby="offerings-title">
+      <header className="offerings-header">
+        <Logo />
+        <nav className="offerings-nav" aria-label="Offerings navigation">
+          {navigation.map((item) => <a key={item} href={item === "Home" ? "#home" : `#${item.toLowerCase().replace(" ", "-")}`} className={item === "Home" ? "active" : ""}>{item}</a>)}
+        </nav>
+        <Button asChild className="offerings-quote shadow-none"><a href="#contact">Get a Free Quote <ArrowRight size={16} /></a></Button>
+      </header>
+      <div className="offerings-inner">
+        <div className="offerings-intro">
+          <p className="offerings-eyebrow">OUR OFFERINGS <span /></p>
+          <h2 id="offerings-title">Solutions That Help <span>Your Business Grow</span></h2>
+          <p>From custom software to AI-powered automation, we build practical digital solutions<br className="offerings-desktop-break" /> around your business needs.</p>
+          <img className="offerings-note" src={topNote.url} alt="Ideas Build Better Businesses" />
+        </div>
+        <div className="offerings-cards">
+          {offerings.map(({ number, tag, title, description, action, image, icon: Icon }) => (
+            <article className="offering-card" key={number}>
+              <span className="offering-icon"><Icon size={23} strokeWidth={1.8} /></span>
+              <span className="offering-number">{number}</span>
+              <img className="offering-photo" src={image} alt={title} />
+              <div className="offering-details">
+                <span className="offering-tag">{tag}</span>
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <a href="#contact">{action} <ArrowRight size={17} /></a>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="offerings-cta">
+          <div className="offerings-cta-copy">
+            <p>LET’S BUILD TOGETHER <span /></p>
+            <h2>Not Sure What You Need?</h2>
+            <span>Talk to our experts and we’ll help you choose the right solution<br className="offerings-desktop-break" /> for your business goals.</span>
+          </div>
+          <div className="offerings-cta-actions">
+            <Button asChild className="offerings-consult shadow-none"><a href="#contact">Get a Free Consultation <ArrowRight size={16} /></a></Button>
+            <Button asChild variant="outline" className="offerings-chat shadow-none"><a href="#contact"><MessageCircle size={16} /> Chat with Us</a></Button>
+          </div>
+          <img src={bottomNote.url} className="offerings-bottom-note" alt="Same Team Bigger Goals" />
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -135,6 +196,7 @@ function Index() {
         <div><p className="eyebrow">WHAT WE DO</p><h2>Everything You Need<br />to <span>Build and Grow Online.</span></h2></div>
         <p>From modern websites to AI-powered solutions, we help businesses create digital products that make an impact.</p>
       </section>
+      <Offerings />
       <div id="about" /><div id="projects" /><div id="why-us" /><div id="contact" />
     </main>
   );
