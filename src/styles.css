@@ -149,9 +149,9 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
   .hero-copy>div.mt-8 { margin-top: 12px; gap: 7px; }
   .hero-copy>div.mt-8 a { height: 43px; border-radius: 9px; font-size: .78rem; }
   .hero-copy>div.mt-8 a span { width: 26px; height: 26px; }
-  .hero-visual { height: 222px; margin-top: 0; }
+  .hero-visual { height: 140px; margin-top: 0; }
   .hero-visual::after { display: none; }
-  .hero-visual img { height: 100%; min-height: 0; object-fit: fill; object-position: center; }
+  .hero-visual img { height: 100%; min-height: 0; object-fit: cover; object-position: 55% 45%; }
   .service-list { display: none; }
   .stats-grid { grid-template-columns: repeat(2,1fr); margin-top: 0; padding: 14px 0 17px; }
   .stats-grid div { min-height: 55px; padding: 5px 12px 8px 7px; }
@@ -174,7 +174,7 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
 }
 
 @media (max-width: 430px) {
-  .hero-copy .stats-grid { position: absolute; top: calc(100% + 222px); left: 0; width: 100%; padding-inline: 14px; background: var(--background); }
+  .hero-copy .stats-grid { position: absolute; top: calc(100% + 140px); left: 0; width: 100%; padding-inline: 14px; background: var(--background); }
   .hero-grid { padding-bottom: 130px; }
   .hero-copy>div.mt-8 { display: grid; }
   .trust-band { padding-top: 19px; }
