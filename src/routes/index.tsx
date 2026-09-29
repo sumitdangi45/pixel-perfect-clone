@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, BrainCircuit, ChartNoAxesCombined, Code2, Database, Menu, MessageCircle, Play } from "lucide-react";
+import { ArrowRight, BrainCircuit, ChartColumnIncreasing, ChartNoAxesCombined, Code2, Database, Heart, Lightbulb, Menu, MessageCircle, Play, ShieldCheck, Target, Users, UsersRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -15,6 +15,7 @@ import aiAsset from "@/assets/anni-ai-service.jpg.asset.json";
 import growthAsset from "@/assets/anni-growth-service.jpg.asset.json";
 import topNote from "@/assets/anni-note-top.png.asset.json";
 import bottomNote from "@/assets/anni-note-bottom-clean.png.asset.json";
+import whyAsset from "@/assets/anni-why-team.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
