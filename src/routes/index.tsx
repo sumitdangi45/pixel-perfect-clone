@@ -188,7 +188,7 @@ function Index() {
       <header className="grid h-[92px] grid-cols-[minmax(0,1fr)_auto] items-center border-b border-border/50 px-5 lg:h-[118px] lg:grid-cols-[auto_1fr_auto] lg:px-[4.5%]">
         <Logo />
         <nav className="hidden items-center justify-center gap-11 lg:flex" aria-label="Main navigation">
-          {navigation.map((item) => (
+          {navigation.filter((item) => item !== "Blog").map((item) => (
             <a
               key={item}
               href={item === "Home" ? "#home" : `#${item.toLowerCase().replace(" ", "-")}`}
@@ -211,7 +211,7 @@ function Index() {
             <SheetTitle className="text-left text-2xl">Anni</SheetTitle>
             <SheetDescription className="sr-only">Main navigation</SheetDescription>
             <nav className="mt-8 flex flex-col" aria-label="Mobile navigation">
-              {navigation.map((item) => <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`} className="border-b border-border py-4 text-lg font-semibold">{item}</a>)}
+              {navigation.filter((item) => item !== "Blog").map((item) => <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`} className="border-b border-border py-4 text-lg font-semibold">{item}</a>)}
             </nav>
           </SheetContent>
         </Sheet>
